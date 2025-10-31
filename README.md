@@ -37,6 +37,13 @@ pip install git+https://github.com/passwork-me/passwork-python.git
     - `direct_api_call.md` — direct API calls
     - `cmd_parameter.md` — pass secrets as command parameters
 
+- `pipelines/` — CI example using `passwork-cli` in a pipeline environment.
+  - `pipeline.yml` demonstrates:
+    - retrieving database credentials to run migrations
+    - retrieving API/deploy keys to run deployment scripts
+    - sending a notification via a direct API call
+  - Uses the Docker image `passwork-cli:latest` as the build image.
+
 ## Official Documentation
 
 - API overview: [API and integrations — intro](https://passwork.pro/tech-guides/api-and-integrations/intro/)
