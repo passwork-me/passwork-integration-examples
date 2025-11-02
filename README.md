@@ -20,11 +20,11 @@ pip install git+https://github.com/passwork-me/passwork-python.git
 ## Repository Structure
 
 - `python/` — examples that use the Python connector to interact with Passwork.
-  - Includes examples for: creating company vaults and vaults (`create_company_vault.py`, `create_vault.py`),
-    CRUD for items (`create_item.py`, `get_item.py`, `get_items.py`, `update_item.py`, `delete_item.py`),
-    search (`search_item.py`), shortcuts (`create_shortcut.py`, `get_shortcut.py`), snapshots (`get_snapshot.py`),
-    sessions and tokens (`session.py`, `refresh_token.py`), direct calls (`general_call.py`), user and links (`create_user.py`, `create_link.py`),
-    inbox and SSL options (`get_inbox_item.py`, `get_item_no_ssl.py`), vault retrieval (`get_vault.py`).
+  - Includes examples for: creating company vaults and vaults (`create_company_vault.md`, `create_private_vault.md`),
+    CRUD for items (`create_item.md`, `get_item.md`, `get_items.md`, `update_item.md`, `delete_item.md`),
+    search (`search_item.md`, `search_shortcut.md`), shortcuts (`create_shortcut.md`, `get_shortcut.md`), snapshots (`get_snapshot.md`),
+    sessions and tokens (`session.md`, `refresh_token.md`), direct calls (`general_call.md`), user and links (`create_user.md`, `create_link.md`),
+    inbox and SSL options (`get_inbox_item.md`, `no_ssl_verify.md`), vault retrieval (`get_vault.md`).
 
 - `cli/` — copy‑ready recipes for DevOps/CI pipelines using `passwork-cli`.
   - Open the corresponding files for scenarios:
@@ -36,6 +36,8 @@ pip install git+https://github.com/passwork-me/passwork-python.git
     - `refresh_token.md` — refresh tokens
     - `direct_api_call.md` — direct API calls
     - `cmd_parameter.md` — pass secrets as command parameters
+    - `get.md` — get items and shortcuts, extract specific fields, generate TOTP codes
+    - `update.md` — update data items
 
 - `pipelines/` — CI example using `passwork-cli` in a pipeline environment.
   - `pipeline.yml` demonstrates:
