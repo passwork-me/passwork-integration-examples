@@ -1,4 +1,4 @@
-# Passwork API Integration Examples
+# Passwork API integration examples
 
 This repository contains practical examples for working with the Passwork API using approaches:
 
@@ -7,7 +7,7 @@ This repository contains practical examples for working with the Passwork API us
 
 This repository does not contain the sources of the CLI or the connector — only usage examples.
 
-## Install the Python Connector
+## Install the python connector
 
 Requires Python 3.10+.
 
@@ -17,7 +17,7 @@ or
 pip install git+https://github.com/passwork-me/passwork-python.git
 ```
 
-## Repository Structure
+## Repository structure
 
 - `python/` — examples that use the Python connector to interact with Passwork.
   - Includes examples for: creating company vaults and vaults (`create_company_vault.md`, `create_private_vault.md`),
@@ -46,7 +46,7 @@ pip install git+https://github.com/passwork-me/passwork-python.git
     - sending a notification via a direct API call
   - Uses the Docker image `passwork-cli:latest` as the build image.
 
-## Official Documentation
+## Official documentation
 
 - API overview: [API and integrations — intro](https://passwork.pro/tech-guides/api-and-integrations/intro/)
 - Python connector: [Python connector](https://passwork.pro/tech-guides/api-and-integrations/python-connector/)

@@ -1,12 +1,12 @@
-# Getting a Vault
+# Getting a vault
 
 This example demonstrates how to retrieve vault information in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve detailed information about a vault, including its name, type, permissions, and access settings. This is useful for checking vault properties, permissions, and configuration.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_vault.py` with the following content:
 
@@ -88,7 +88,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `VAULT_ID` of the vault to retrieve
@@ -96,7 +96,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 4. The response includes vault metadata, permissions, access settings, and configuration
 5. The encrypted master key is included if client-side encryption is enabled
 
-## Important Notes
+## Important notes
 
 - **Vault ID**: Required. Get it from the vault URL in the Passwork web interface (e.g., `https://passwork.example.org/VAULT_ID`)
 - **Vault Information**: The response includes vault name, type ID, visibility status, and permissions

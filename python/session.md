@@ -1,19 +1,19 @@
-# Authentication and Token Management
+# Authentication and token management
 
 This example demonstrates authentication and token management in Passwork using the Python connector, including automatic token rotation, session saving, and loading.
 
-## Authentication and Token Handling
+## Authentication and token handling
 
 The Python connector supports working with tokens:
 
 - Ability to save and reuse previously set tokens
 - Automatic token refresh when `ACCESS_TOKEN` expires (if `REFRESH_TOKEN` is provided)
 
-## Automatic Token Rotation
+## Automatic token rotation
 
 To enable automatic token rotation, specify the `auto_refresh=True` parameter when creating a `PassworkClient` instance. In this mode, if the API returns an `accessTokenExpired` error, the connector automatically calls token refresh and retries the request without manual intervention.
 
-### update_tokens
+### Update_tokens
 
 The function updates `accessToken` using a previously issued `refreshToken`. It doesn't accept arguments and works with the current state of the `PassworkClient` instance.
 
@@ -24,7 +24,7 @@ Actions performed:
 
 We recommend using automatic token rotation together with saving tokens (and master key) to a separate file.
 
-## Saving and Loading Tokens
+## Saving and loading tokens
 
 The Python connector supports saving received tokens (and master key) to a separate file. Data can be loaded from environment variables or directly from automation scripts. When saving, encryption is performed using a randomly generated key.
 
@@ -32,7 +32,7 @@ For working with saving and loading tokens, the following functions are provided
 - `save_session`
 - `load_session`
 
-### save_session
+### Save_session
 
 The function is designed to save tokens and (optionally) master key from a `PassworkClient` instance.
 
@@ -43,7 +43,7 @@ Parameters:
   - On subsequent calls, you must pass the previously generated key
 - `save_master_key` — flag determining whether to save and encrypt the user's master key in the file together with tokens
 
-### load_session
+### Load_session
 
 The function is designed to load saved tokens and (optionally) master key from an encrypted file.
 
@@ -51,7 +51,7 @@ Parameters:
 - `file_path` — path and filename from which encrypted data will be loaded
 - `encryption_key` — encryption key that was used when saving tokens and (optionally) master key
 
-## Basic Example
+## Basic example
 
 Initially, tokens and master key are located in environment variables and will be retrieved from there into a .py script to create a private vault.
 
@@ -136,7 +136,7 @@ To avoid storing the encryption key for decrypting tokens in a file, you can pas
 - **Standard Input (STDIN, pipe, or here-doc)** — the key is read from input stream without appearing in the process argument list
 - **Interactive Input (getpass)** — secure prompt for the key from the user at runtime (characters are not displayed on screen)
 
-## Important Notes
+## Important notes
 
 - **Automatic Token Rotation**: When `auto_refresh=True` is set, expired tokens are automatically refreshed without manual intervention
 - **Encryption Key**: On first save, always pass `None` to let the connector generate a secure random key

@@ -1,15 +1,15 @@
-# Updating Items and Shortcuts
+# Updating items and shortcuts
 
 This example demonstrates how to update items and shortcuts in Passwork using the `update` command. You can update individual fields or perform bulk updates with multiple fields at once.
 
-## Use Cases
+## Use cases
 
 1. **Update single fields** - Change password, name, login, URL, description, tags, or custom fields individually
 2. **Clear field values** - Set fields to empty by passing an empty string
 3. **Bulk updates** - Update multiple fields in a single command
 4. **Update custom fields** - Modify or add custom fields to items and shortcuts
 
-## Basic Usage
+## Basic usage
 
 You must specify either `--password-id` or `--shortcut-id` to identify which item to update.
 
@@ -22,7 +22,27 @@ passwork-cli update \
   --password "new-password-value"
 ```
 
-## Updating Standard Fields
+## SSL parameters
+
+For `update` commands, use the `--ssl-verify` parameter:
+
+```bash
+# Use system SSL verification explicitly
+passwork-cli update \
+  --password-id "68793e13dfc88d879e0f2e39" \
+  --password "new-password" \
+  --ssl-verify
+
+# Use a custom CA bundle/certificate path
+passwork-cli update \
+  --password-id "68793e13dfc88d879e0f2e39" \
+  --password "new-password" \
+  --ssl-verify "/etc/ssl/certs"
+```
+
+You can also use `--no-ssl-verify` if you need to disable SSL verification.
+
+## Updating standard fields
 
 You can update standard fields like password, name, login, URL, description, and tags:
 
@@ -49,7 +69,7 @@ passwork-cli update --password-id "68793e13dfc88d879e0f2e39" --tags "tag1,tag2,t
 passwork-cli update --password-id "68793e13dfc88d879e0f2e39" --description ""
 ```
 
-## Updating Custom Fields
+## Updating custom fields
 
 Custom fields are updated using the `--custom-*` syntax, where `*` is the name of your custom field:
 
@@ -59,18 +79,13 @@ passwork-cli update \
   --password-id "68793e13dfc88d879e0f2e39" \
   --custom-API_KEY "new-api-key-value"
 
-# Update custom field with different name
-passwork-cli update \
-  --password-id "68793e13dfc88d879e0f2e39" \
-  --custom-Database_Host "db.example.com"
-
 # Clear custom field
 passwork-cli update \
   --password-id "68793e13dfc88d879e0f2e39" \
   --custom-API_KEY ""
 ```
 
-## Bulk Updates
+## Bulk updates
 
 You can update multiple fields in a single command:
 
@@ -101,7 +116,7 @@ passwork-cli update \
   --custom-API_KEY "api-key-value"
 ```
 
-## Working with Shortcuts
+## Working with shortcuts
 
 Shortcuts can be updated using the same syntax with `--shortcut-id`:
 
@@ -121,7 +136,7 @@ passwork-cli update \
   --custom-API_KEY "shortcut-api-key"
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to your Passwork server using the provided credentials
 2. It retrieves the item or shortcut by ID
@@ -132,7 +147,7 @@ passwork-cli update \
 7. Tags can be specified as a comma-separated list, which will replace existing tags
 8. The updated item is saved back to Passwork
 
-## Important Notes
+## Important notes
 
 - **Name field**: Cannot be set to empty. If you try to set `--name ""`, an error will occur
 - **Custom fields**: Use `--custom-FIELD_NAME` syntax where `FIELD_NAME` is the exact name of your custom field
@@ -140,7 +155,7 @@ passwork-cli update \
 - **Empty values**: Passing an empty string (`""`) for any field will clear that field's value
 - **Item type**: Use `--password-id` for items and `--shortcut-id` for shortcuts
 
-## Using Environment Variables
+## Using environment variables
 
 You can set Passwork credentials as environment variables to simplify commands:
 
@@ -148,6 +163,7 @@ You can set Passwork credentials as environment variables to simplify commands:
 export PASSWORK_HOST="https://passwork.example.com"
 export PASSWORK_TOKEN="your_access_token"
 export PASSWORK_MASTER_KEY="your_master_key"
+export PASSWORK_REFRESH_TOKEN="your_refresh_token"
 
 # Then update without specifying credentials
 passwork-cli update \

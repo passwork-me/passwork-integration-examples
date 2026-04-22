@@ -1,12 +1,12 @@
-# Getting Multiple Items
+# Getting multiple items
 
 This example demonstrates how to retrieve and decrypt multiple items from Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve multiple items by their IDs in a single operation. This is more efficient than calling `get_item()` multiple times, as it retrieves all items in one batch request.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_items.py` with the following content:
 
@@ -83,7 +83,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 ]
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies a list of `ITEM_IDS` for the items to retrieve
@@ -92,7 +92,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 5. The method returns a list of decrypted items with all fields accessible
 6. This approach is more efficient than calling `get_item()` multiple times
 
-## Important Notes
+## Important notes
 
 - **Item IDs**: Required. Provide a list of item IDs you want to retrieve
 - **Batch Operation**: This method retrieves multiple items in a single request, which is more efficient than individual requests

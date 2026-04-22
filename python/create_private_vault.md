@@ -1,12 +1,12 @@
-# Creating a Private Vault
+# Creating a private vault
 
 This example demonstrates how to create a private vault in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to create a new private vault. Private vaults are personal vaults that belong to the user creating them and can be shared with other users if needed.
 
-## Basic Usage
+## Basic usage
 
 Create a file `create_private_vault.py` with the following content:
 
@@ -46,7 +46,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 Vault was created: 68da51dde06b28a5df0d7752
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient with your Passwork host address
 2. It authenticates using the access token and refresh token
@@ -55,7 +55,7 @@ Vault was created: 68da51dde06b28a5df0d7752
 5. A new private vault is created with the specified name
 6. The vault ID is returned and printed
 
-## Important Notes
+## Important notes
 
 - **Access Token**: Required for authentication. Get it from the Passwork web interface
 - **Refresh Token**: Optional but recommended for automatic token refresh

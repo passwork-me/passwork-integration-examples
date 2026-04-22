@@ -1,12 +1,12 @@
-# Getting a Snapshot
+# Getting a snapshot
 
 This example demonstrates how to retrieve and decrypt a snapshot (Editions) of an item in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve a specific snapshot (Editions) of an item. Snapshots preserve the state of an item at a particular point in time, allowing you to view or restore previous versions of the item.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_snapshot.py` with the following content:
 
@@ -82,7 +82,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies both the `ITEM_ID` of the item and the `SNAPSHOT_ID` of the specific snapshot to retrieve
@@ -91,7 +91,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 5. The response includes all item fields as they were at the time of the snapshot, plus metadata about when it was created and by whom
 6. Optionally, you can download attachments from the snapshot
 
-## Important Notes
+## Important notes
 
 - **Item ID**: Required. The ID of the item whose snapshot you want to retrieve
 - **Snapshot ID**: Required. The ID of the specific snapshot (edition) to retrieve. Get it from the item's version history

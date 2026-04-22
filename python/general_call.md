@@ -1,12 +1,12 @@
-# Making Direct API Calls
+# Making direct API calls
 
 This example demonstrates how to make direct API calls to Passwork using the Python connector's `call()` method.
 
-## Use Case
+## Use case
 
 You need to perform API operations that are not covered by the standard methods of the PassworkClient. The `call()` method allows you to make direct HTTP requests to any Passwork API endpoint.
 
-## Basic Usage
+## Basic usage
 
 Create a file `general_call.py` with the following content:
 
@@ -48,7 +48,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 Response: {'binItemId': '68da59afbf68ddc3b80d2346'}
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. The `call()` method is used to make a direct HTTP request to the Passwork API
@@ -56,7 +56,7 @@ Response: {'binItemId': '68da59afbf68ddc3b80d2346'}
 4. Optionally, you can pass query parameters or request body data as a third parameter
 5. The API response is returned and can be processed as needed
 
-## Important Notes
+## Important notes
 
 - **HTTP Methods**: Supported methods include GET, POST, PUT, DELETE, PATCH
 - **API Endpoints**: Use the full API endpoint path, e.g., `/api/v1/folders/{FOLDER_ID}`

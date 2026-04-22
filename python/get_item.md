@@ -1,12 +1,12 @@
-# Getting an Item
+# Getting an item
 
 This example demonstrates how to retrieve and decrypt an item from Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve an item by its ID and access its decrypted data. Items are automatically decrypted using your master key, allowing you to access all fields including passwords, custom fields, and metadata.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_item.py` with the following content:
 
@@ -72,7 +72,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `ITEM_ID` of the item to retrieve
@@ -81,7 +81,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 5. All fields become accessible, including the password, custom fields, and metadata
 6. Optionally, you can download attachments from the item using `download_item_attachment()`
 
-## Important Notes
+## Important notes
 
 - **Item ID**: Required. Get it from the item URL in the Passwork web interface
 - **Master Key**: Required if client-side encryption is enabled. The item will be automatically decrypted using your master key

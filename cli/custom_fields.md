@@ -1,8 +1,8 @@
-# Working with Custom Fields
+# Working with custom fields
 
 This example demonstrates how to access and use custom fields from Passwork passwords.
 
-## Use Case
+## Use case
 
 You have a database password in Passwork that includes not just the main password but also custom fields for the database hostname, port, username, and SSL certificate. You need to use all these fields to connect to the database.
 
@@ -20,7 +20,7 @@ passwork-cli exec \
   mysql -h $DB_HOSTNAME -P $DB_PORT -u $DB_USERNAME -p$DB_PASSWORD --ssl-ca=$DB_CERTIFICATE -e 'SHOW DATABASES;'
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to the server and retrieves the password with ID "db_prod_cluster"
 2. The password and all its custom fields are decrypted

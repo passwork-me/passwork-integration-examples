@@ -1,8 +1,8 @@
-# Retrieving Passwords from a Specific Folder
+# Retrieving passwords from a specific folder
 
 Before using this example, you need to organize your passwords in Passwork by creating a folder for your project and placing all related secrets in it. For instance, create a folder named "Project X" and add all database passwords, API keys, and other credentials needed for this project.
 
-## Use Case
+## Use case
 
 You're deploying an application that requires access to multiple credentials stored in the same Passwork folder. All necessary credentials for this project are organized in a single folder.
 
@@ -18,7 +18,7 @@ export PASSWORK_MASTER_KEY="your_master_key"
 passwork-cli exec --folder-id "folder123" ./deploy_project.sh
 ```
 
-## Alternate Command (using --cmd parameter)
+## Alternate command (using --cmd parameter)
 
 ```bash
 passwork-cli exec \
@@ -29,7 +29,7 @@ passwork-cli exec \
   --cmd "./deploy_project.sh"
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to your Passwork server using the provided credentials
 2. It searches for all passwords in the folder with ID `folder123`
@@ -37,7 +37,7 @@ passwork-cli exec \
 4. For each password, an environment variable is created using the password name
 5. Your deployment script runs with access to all the environment variables
 
-## Getting the Folder ID
+## Getting the folder ID
 
 To find the ID of your folder:
 

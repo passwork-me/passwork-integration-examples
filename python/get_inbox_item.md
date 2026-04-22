@@ -1,12 +1,12 @@
-# Getting an Inbox Item
+# Getting an inbox item
 
 This example demonstrates how to retrieve and decrypt an item from the inbox in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve an item that was shared with you through the Passwork inbox. Inbox items are password entries that have been shared with you by other users, and they are automatically decrypted using your master key.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_inbox_item.py` with the following content:
 
@@ -88,7 +88,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `INBOX_ID` of the inbox item to retrieve
@@ -97,7 +97,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 5. Optionally, you can download attachments from the inbox item using `download_inbox_attachment()`
 6. The decrypted item data is returned with all fields visible, including inbox metadata (sender, access level, etc.)
 
-## Important Notes
+## Important notes
 
 - **Inbox ID**: Required. The ID of the inbox item you want to retrieve. You can find inbox IDs in your Passwork inbox
 - **Master Key**: Required. The item is automatically decrypted using your master key if client-side encryption is enabled

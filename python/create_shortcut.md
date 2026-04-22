@@ -1,12 +1,12 @@
-# Creating a Shortcut
+# Creating a shortcut
 
 This example demonstrates how to create a shortcut to an item in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to create a shortcut to an existing item in a different vault or folder. Shortcuts allow you to reference the same item from multiple locations without duplicating the item data.
 
-## Basic Usage
+## Basic usage
 
 Create a file `create_shortcut.py` with the following content:
 
@@ -57,7 +57,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 Shortcut was created: 68da4849c9294fee52018fa2
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `ITEM_ID` of the original item to create a shortcut to
@@ -66,7 +66,7 @@ Shortcut was created: 68da4849c9294fee52018fa2
 5. A shortcut is created that references the original item
 6. The shortcut ID is returned and can be used to access the item from the new location
 
-## Important Notes
+## Important notes
 
 - **Item ID**: Required. The ID of the original item you want to create a shortcut to. Get it from the item URL in the web interface
 - **Vault ID**: Required. The ID of the vault where you want to place the shortcut. This can be different from the vault containing the original item

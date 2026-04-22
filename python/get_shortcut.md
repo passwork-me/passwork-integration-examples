@@ -1,12 +1,12 @@
-# Getting a Shortcut
+# Getting a shortcut
 
 This example demonstrates how to retrieve and decrypt a shortcut in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to retrieve a shortcut by its ID and access its data. Shortcuts are references to items that can be placed in different vaults or folders. When you retrieve a shortcut, you get both the shortcut information and the original item data.
 
-## Basic Usage
+## Basic usage
 
 Create a file `get_shortcut.py` with the following content:
 
@@ -106,7 +106,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `SHORTCUT_ID` of the shortcut to retrieve
@@ -115,7 +115,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 5. The response includes both shortcut metadata (location, creator) and the complete original item data
 6. Optionally, you can download attachments from the shortcut
 
-## Important Notes
+## Important notes
 
 - **Shortcut ID**: Required. Get it from the shortcut URL in the Passwork web interface
 - **Master Key**: Required if client-side encryption is enabled. Both the shortcut and the original item will be automatically decrypted

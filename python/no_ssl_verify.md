@@ -1,10 +1,10 @@
-# Disabling SSL Certificate Verification
+# Managing SSL certificate verification
 
-This example demonstrates how to make requests to Passwork API with SSL certificate verification disabled using the Python connector.
+This example demonstrates how to manage SSL certificate verification when working with the Passwork API using the Python connector: use system certificates, provide a custom CA bundle path, or disable verification.
 
-## Use Case
+## Use case
 
-You need to connect to Passwork when SSL certificate verification cannot be performed. This is useful for:
+You may need to connect to Passwork in non-standard SSL environments. This is useful for:
 - Testing environments with self-signed certificates
 - Development servers without proper SSL certificates
 - Internal networks with custom certificate authorities
@@ -12,7 +12,30 @@ You need to connect to Passwork when SSL certificate verification cannot be perf
 
 **Important**: Disabling SSL verification reduces security and makes connections vulnerable to man-in-the-middle attacks. **Only use this in development or trusted internal networks. Never use this in production.**
 
-## Basic Usage
+## Recommended: system certificates
+
+```python
+from passwork_client import PassworkClient
+
+HOST = "https://passwork.example.org"
+
+# verify_ssl=True is the default behavior:
+# the client uses system certificate paths
+passwork = PassworkClient(HOST, verify_ssl=True)
+```
+
+## Alternative: custom CA bundle path
+
+```python
+from passwork_client import PassworkClient
+
+HOST = "https://passwork.example.org"
+
+# You can pass a certificate file path or certificate directory path
+passwork = PassworkClient(HOST, verify_ssl="/etc/ssl/certs")
+```
+
+## Disable SSL verification
 
 Create a file `no_ssl_verify.py` with the following content:
 
@@ -78,18 +101,19 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
-1. When initializing `PassworkClient`, set `verify_ssl=False` parameter to disable SSL certificate verification
-2. All API requests made through this client instance will skip SSL certificate validation
-3. The client authenticates using tokens and master key as usual
-4. All standard operations (`get_item`, `create_item`, `update_item`, etc.) work normally, but without SSL verification
+1. `verify_ssl=True` (or omitted) uses system certificate paths
+2. `verify_ssl="/path/to/certs"` uses your custom CA bundle/certificate directory
+3. `verify_ssl=False` disables SSL verification for all requests made by that client instance
+4. The client authenticates using tokens and master key as usual
 
-## Important Notes
+## Important notes
 
-- **Parameter Location**: Set `verify_ssl=False` when creating the `PassworkClient` instance: `PassworkClient(HOST, verify_ssl=False)`
-- **Applies to All Requests**: Once set, SSL verification is disabled for all requests made through this client instance
-- **Default Behavior**: By default, `PassworkClient` verifies SSL certificates (`verify_ssl=True`). Only set `verify_ssl=False` when absolutely necessary
+- **Parameter Location**: Set `verify_ssl` when creating the `PassworkClient` instance
+- **Supported Values**: `True`, `False`, or a string path to certificate file/directory
+- **Applies to All Requests**: The selected SSL mode applies to all requests made through this client instance
+- **Default Behavior**: `verify_ssl=True` is the recommended default
 - **Security Warning**: **Disabling SSL verification makes all connections vulnerable to man-in-the-middle attacks. Only use in development or trusted internal networks**
 - **Production Usage**: **Never disable SSL verification in production environments** unless you have a specific security requirement
 - **Self-Signed Certificates**: For development, consider installing self-signed certificates in your system's certificate store instead of disabling verification

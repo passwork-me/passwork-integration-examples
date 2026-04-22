@@ -1,12 +1,12 @@
-# Deleting an Item
+# Deleting an item
 
 This example demonstrates how to delete an item in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to delete an item from Passwork. When an item is deleted, it is moved to the bin (trash) and can be restored if needed.
 
-## Basic Usage
+## Basic usage
 
 Create a file `delete_item.py` with the following content:
 
@@ -49,7 +49,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 Item deleted. Bin item ID: 68da5451bf68ddc3b80d2344
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies the `ITEM_ID` of the item to delete
@@ -57,7 +57,7 @@ Item deleted. Bin item ID: 68da5451bf68ddc3b80d2344
 4. The deleted item is moved to the bin (trash)
 5. The bin item ID is returned, which can be used to restore the item if needed
 
-## Important Notes
+## Important notes
 
 - **Item ID**: Required. The ID of the item you want to delete. Get it from the item URL in the web interface
 - **Bin/Trash**: Deleted items are moved to the bin, not permanently removed immediately

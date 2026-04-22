@@ -1,8 +1,8 @@
-# Finding Passwords by Tags
+# Finding passwords by tags
 
 This example demonstrates how to retrieve passwords using tags instead of specific IDs.
 
-## Use Case
+## Use case
 
 You need to deploy an application to your production environment, which requires multiple passwords from your production database servers. All these passwords are tagged with "production" and "database" in your Passwork vault.
 
@@ -18,7 +18,7 @@ export PASSWORK_MASTER_KEY="your_master_key"
 passwork-cli exec --tags "production,database" ./deploy_production.sh
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to the server using credentials from environment variables
 2. It searches for all passwords tagged with both "production" AND "database"

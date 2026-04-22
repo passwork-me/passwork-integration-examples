@@ -1,12 +1,12 @@
-# Updating an Item
+# Updating an item
 
 This example demonstrates how to update an item in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to update an existing item with new values for fields such as name, login, password, URL, description, tags, or custom fields. This is useful for maintaining up-to-date credentials and information.
 
-## Basic Usage
+## Basic usage
 
 Create a file `update_item.py` with the following content:
 
@@ -116,7 +116,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It retrieves the current item using `get_item()` to see its current state
@@ -127,7 +127,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 7. Tags are replaced with the new list
 8. The updated item can be retrieved to verify the changes
 
-## Important Notes
+## Important notes
 
 - **Item ID**: Required. The ID of the item you want to update
 - **Vault ID**: Required. The ID of the vault where the item is located

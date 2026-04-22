@@ -1,8 +1,8 @@
-# Using a Single Password by ID
+# Using a single password by ID
 
 This example demonstrates how to retrieve a single password from Passwork by its ID and use it in a command.
 
-## Use Case
+## Use case
 
 You need to run a database backup script that requires a database password. The password is stored in Passwork with the name "PGPASSWORD", and you want to pass it securely to your script without saving the password in plain text anywhere.
 
@@ -17,7 +17,7 @@ passwork-cli exec \
   pg_dump -h localhost -U username -d database > backup.sql
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to your Passwork server using the provided credentials
 2. It retrieves the password with ID `5f8a7b6c9d0e1f2a3b4c5d6e`

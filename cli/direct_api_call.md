@@ -1,8 +1,8 @@
-# Making Direct API Calls
+# Making direct API calls
 
 This example shows how to use the API command to make direct calls to the Passwork API and extract specific information.
 
-## Use Case
+## Use case
 
 You need to retrieve a list of all vaults in your Passwork account and extract just their names for a report.
 
@@ -20,7 +20,7 @@ passwork-cli api \
   --field "name"
 ```
 
-## How It Works
+## How it works
 
 1. Passwork CLI connects to the Passwork server using your credentials
 2. It makes a direct GET request to the `/api/v1/vaults` endpoint (automatically prepending `/api/`)
@@ -28,7 +28,7 @@ passwork-cli api \
 4. The `--field "name"` parameter extracts just the name field from each vault
 5. The result is a JSON array of vault names
 
-## Example Output
+## Example output
 
 ```json
 [

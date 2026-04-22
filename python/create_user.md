@@ -1,12 +1,12 @@
-# Creating a User
+# Creating a user
 
 This example demonstrates how to create a new local user in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to programmatically create a new local user account in Passwork. This is useful for automation, bulk user creation, or integration with other user management systems.
 
-## Basic Usage
+## Basic usage
 
 Create a file `create_user.py` with the following content:
 
@@ -87,7 +87,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 User 'Python Test User' created with ID: 68da4cf1bf68ddc3b80d2342, password: JhUaUIcIK8If, master password: XBcO5sAE$HL7
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It fetches available user roles from the API to find manageable roles
@@ -97,7 +97,7 @@ User 'Python Test User' created with ID: 68da4cf1bf68ddc3b80d2342, password: JhU
 6. A new user is created with the specified data
 7. The script displays the created user ID along with the generated password and master password (if provided)
 
-## Important Notes
+## Important notes
 
 - **Email**: Required. Must be a valid email address and unique within the Passwork instance
 - **Full Name**: Required. The display name for the user

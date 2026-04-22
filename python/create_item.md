@@ -1,12 +1,12 @@
-# Creating an Item
+# Creating an item
 
 This example demonstrates how to create a new item in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to create a new item with login credentials, URL, description, tags, and custom fields. Items can include standard fields (name, login, password, URL, description) as well as custom fields for storing additional information.
 
-## Basic Usage
+## Basic usage
 
 Create a file `create_item.py` with the following content:
 
@@ -131,7 +131,7 @@ Item created with ID: 68d3d19c3ea6febf700c740a
 }
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It prepares item data including standard fields (name, login, password, URL, description) and custom fields
@@ -139,7 +139,7 @@ Item created with ID: 68d3d19c3ea6febf700c740a
 4. The item is created in the specified vault using `create_item()`
 5. Optionally, the created item can be retrieved and displayed to verify the creation
 
-## Important Notes
+## Important notes
 
 - **Vault ID**: Required. Get it from the web interface by viewing the vault URL
 - **Custom Fields**: Optional. Remove the `custom_fields` array and `customs` field if not needed

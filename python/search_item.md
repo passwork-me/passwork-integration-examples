@@ -1,12 +1,12 @@
-# Searching Items
+# Searching items
 
 This example demonstrates how to search for items in Passwork using the Python connector with automatic decryption.
 
-## Use Case
+## Use case
 
 You need to search for items by tags, folders, vaults, or text query. The search results are automatically decrypted, allowing you to access all fields including passwords immediately.
 
-## Basic Usage
+## Basic usage
 
 Create a file `search_item.py` with the following content:
 
@@ -83,7 +83,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 ]
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies search criteria using optional parameters:
@@ -95,7 +95,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 4. All matching items are returned as a list with all fields accessible, including passwords
 5. You can combine multiple search criteria to narrow down results
 
-## Important Notes
+## Important notes
 
 - **All Parameters Optional**: All search parameters are optional. You can use any combination of them
 - **Tags**: Provide a list of tag names to search for items containing those tags

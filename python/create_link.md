@@ -1,12 +1,12 @@
-# Creating a Link
+# Creating a link
 
 This example demonstrates how to create a shareable link for an item or shortcut in Passwork using the Python connector.
 
-## Use Case
+## Use case
 
 You need to create a shareable link to an item or shortcut that can be accessed without direct Passwork authentication. Links can be reusable or single-use, and can have different expiration times.
 
-## Basic Usage
+## Basic usage
 
 Create a file `create_link.py` with the following content:
 
@@ -56,7 +56,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 Link: https://passwork.example.org/g/p/KLul6UwnSD28DvvCYtjfgUnlb#code=2qUVLLinLAVU8kzILckD0GH5ptGmK5fBEICmLG3CwrLapdM3h8yd0GimP9Qz7dERgX@E8RHDLQgOn8mZRceLgnhMiY0hTtVLWJHr
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies either an `ITEM_ID` or `SHORTCUT_ID` (but not both)
@@ -65,7 +65,7 @@ Link: https://passwork.example.org/g/p/KLul6UwnSD28DvvCYtjfgUnlb#code=2qUVLLinLA
 5. A shareable link is created and returned as a URL
 6. The link can be shared with others who don't need Passwork authentication to access the item or shortcut
 
-## Important Notes
+## Important notes
 
 - **Item ID or Shortcut ID**: Required. You must provide either `ITEM_ID` or `SHORTCUT_ID`, but not both. Set the unused one to `None`
 - **Link Type**: Choose `LinkType.Reusable` for links that can be used multiple times, or `LinkType.Single_use` for one-time access links

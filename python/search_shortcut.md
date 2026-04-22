@@ -1,12 +1,12 @@
-# Searching Shortcuts
+# Searching shortcuts
 
 This example demonstrates how to search for shortcuts in Passwork using the Python connector with automatic decryption.
 
-## Use Case
+## Use case
 
 You need to search for shortcuts by tags, folders, vaults, or text query. Shortcuts are references to items that can be placed in different vaults or folders. The search results are automatically decrypted, allowing you to access all fields including passwords immediately.
 
-## Basic Usage
+## Basic usage
 
 Create a file `search_shortcut.py` with the following content:
 
@@ -119,7 +119,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 ]
 ```
 
-## How It Works
+## How it works
 
 1. The script initializes the PassworkClient and authenticates using tokens
 2. It specifies search criteria using optional parameters:
@@ -131,7 +131,7 @@ Insert the tokens obtained from the web interface (user master key, if client-si
 4. Each result includes both shortcut metadata (in the `shortcut` field) and the complete original item data (in the `password` field)
 5. All fields are accessible, including passwords
 
-## Important Notes
+## Important notes
 
 - **All Parameters Optional**: All search parameters are optional. You can use any combination of them
 - **Tags**: Provide a list of tag names to search for shortcuts containing those tags
